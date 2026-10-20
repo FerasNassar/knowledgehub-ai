@@ -1,0 +1,27 @@
+
+# Python virtual environments
+.venv/
+venv/
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+
+# API keys and environment variables
+.env
+.env.*
+!.env.example
+
+# IDE and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local databases and uploaded documents
+chroma_db/
+data/uploads/
+
+# Temporary files
+*.log
+.pytest_cache/
