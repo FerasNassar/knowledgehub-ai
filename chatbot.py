@@ -12,8 +12,22 @@ llm = ChatGroq( # Create a LangChain chat model connected to Groq.
     temperature=0.3,
 )
 
-response = llm.invoke( # send a message to the model and receive its response
-    "Explain what a neural network is in two sentences."
-)
+print("AI is ready to answer your questions. Type 'exit' to quit.")
 
-print(response.content)
+while True:
+    user_input=input("\nYou: ").strip()
+
+    if user_input.lower() == "exit":
+        print("Exiting the chat. Goodbye!")
+        break
+
+    if not user_input:
+        print("Please enter a question or type 'exit' to quit.")
+        continue
+
+    try:
+        response = llm.invoke(user_input)
+        print(f"\nAI: {response.content}")
+    except Exception as e:
+        print(f"\n Error: {e}")
+    
